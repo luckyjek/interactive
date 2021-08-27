@@ -26,9 +26,20 @@
             height: 100px;
             border: 2px solid #000;
             background: #fff000;
+
+            /* forwards는 타임라인이 끝나는 100%위치에 box가 위치해있으면 좋겠을때 사용 */
             animation: sample-ani 3s linear forwards;
+            
+            
+            /* infinite = 계속 반복적 / reverse = 거꾸로  / alternate = 왔다갔다 */
+            /* animation: sample-ani 3s linear infinite alternate; */
+            /* animation: sample-ani 3s linear infinite reverse; */
+
+            /* 출발을 꺼꾸로했다. */
+            /* animation: sample-ani 3s linear infinite alternate-reverse; */
         }
         .box:hover {
+            /* running과 paused가 있는데 , paused를 사용하면 마우스를 호버했을때 멈춘다. */
             animation-play-state: paused;
         }
     </style>
