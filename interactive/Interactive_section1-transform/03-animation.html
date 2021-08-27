@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Web</title>
+    <style>
+        @keyframes sample-ani {
+            0% {
+                /* 이동을 안했다. */
+                transform: translate(0, 0); 
+            }
+            50% {
+                background: red;
+                transform: translate(300px, 0);
+            }
+
+            100% {                  
+            /* x로 400xp, y로 500px */
+                transform: translate(400px, 500px);
+            }
+        }
+        .box {
+            /* 가운데정렬  */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* 네모박스 모양 */
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background: #fff000;
+            /* 기본값인 부드러운속도를 -> 등속도 linear 사용 */
+            /* 가속(timing-function)도 변경시 - linear, ease(기본값) */
+            /* 애니메이션의 반복 */
+            /* animation: sample-ani 2s linear infinite; */
+            animation: sample-ani 2s linear  3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    <div class="box">BOX</div>
+</body>
+</html>
+0
