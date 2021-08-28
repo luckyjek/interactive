@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Interactive Web</title>
+        <style>
+            .world {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60vw;
+                height: 60vh;
+                background: #fff000;
+                perspective: 500px;
+            }
+            /* 컨테이너 */
+            .card {
+                /* 따라서 자식을의 기준점으로 사용하기위해 relative를써준다. */
+                position: relative;
+                width: 100px;
+                height: 150px;
+                margin: 1em;
+                /* 만약 card가 (.world:hover .card )변화가있다면, 변화없는 defalt상태또한 따로지정 해주는것이 성능에 쫌더 도움이된다.  */
+                transform: rotateY(0deg);
+                transition: 1s;
+                transform-style: preserve-3d;
+                /* 문처럼 열리기위해 기준점을 왼쪽으로 */
+                transform-origin: left;
+            }
+            .card-side {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* 원래 위치와 상관없이 위치를 지정할 수 있다. 단, 가장 가까운 상위 요소를 기준으로 위치가 결정 된다. */
+                position: absolute;
+                left: 0;
+                top: 0;
+                /* 부모의 크기를따라가므로 width, height의 크기는 크게 */
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5em;
+                font-size: 1.5rem;
+                /*  쓸때없는 뒷면은 그냥 숨김처리해준다.*/
+                backface-visibility: hidden;
+            }
+            .card-side-front {
+                z-index: 1;
+                background: white;
+            }
+            .card-side-back {
+                background: red;
+                transform: rotateY(180deg);
+            }
+            .world:hover .card {
+                /* 밖으로 돌아가게하기 */
+                transform: rotateY(-180deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="world">
+            <div class="card">
+                <!-- 면을 2개만든다 앞면 and 뒷면 -->
+                <div class="card-side card-side-front">F</div>
+                <div class="card-side card-side-back">B</div>
+            </div>
+        </div>
+    </body>
+</html>
