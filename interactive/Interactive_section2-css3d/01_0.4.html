@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interactive Web</title>
+        <style>
+            .container {
+                display: flex;
+                /* 방향 flex-direction의 기본값은 row -어묵꼬치에대해 생각하기 */
+                /* flex-direction: column; */
+
+                /* 정렬 justify-content는 main축(어묵꼬치) 위에서 아이템을 정렬하하는 
+                애가 justify-content이다. (어묵꼬치의 맨 마지막 남은 어묵을 맨 위로 끌어올리듯..)*/
+                /*맨 왼,오 모두 다 사용*/
+                /* justify-content: space-between; */
+                /*맨 왼,오 여백이있다.*/
+                /* justify-content: space-around;  */
+
+                /* 아래 align-items랑 함께 가운데정렬로 많이 사용한다. */
+                /* justify-content: center; */
+                /* 정렬 align-items의 기본값은 ? stretch이다. 수직방향으로 정렬을해준다(어묵을 뜯어내는..) */
+                /* align-items: center; */
+
+                height: 80vh;
+                background: gray;
+            }
+            .item {
+                /* 자기 컨텐츠 폭을 제외한 여백 (예를들어 글자가 들어가고 난 후의 여백) */
+                /* flex-grow: 1; */
+
+                /* 위에서는 flex-grow로 비율대로 나눠가질때, 원래콘텐츠가 점유하는 영역이 얼만큼으로
+                해줄건가를 결정한다. 즉, 원래콘텐츠가 가진 차지하는 영역을 어떻게 해줄것인가? 정의하는 속성 
+                기본값은 auto로 되어있다.*/
+                /* flex-basis: auto; */
+
+                /* 하지만 일반적으로 flex-grow flex-basis따로 안써주고 flex : 1; 이런식으로 사용한다. */
+                flex: 1;
+
+                border: 3px solid black;
+                font-size: 3rem;
+                background: white;
+            }
+            /* .item:nth-child(1) {
+                flex-grow: 1;
+            }
+            .item:nth-child(2) {
+                flex-grow: 5;
+            }
+            .item:nth-child(3) {
+                flex-grow: 2;
+            }
+            .item:nth-child(4) {
+                flex-grow: 3;
+            }
+            .item:nth-child(5) {
+                flex-grow: 1;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">AAA</div>
+            <div class="item">B</div>
+            <div class="item">CCCCCC</div>
+            <div class="item">DDD</div>
+            <div class="item">E</div>
+        </div>
+    </body>
+</html>
