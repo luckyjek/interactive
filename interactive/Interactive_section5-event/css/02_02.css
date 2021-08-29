@@ -1,0 +1,50 @@
+.stage {
+    /* vw : viewport width */
+    /* vh : viewport height */
+    /* overflow: hidden; 삐져나가면 스크롤 안생기게 hidden으로해줬다. */
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 75vw;
+    background: #fff000;
+}
+
+/* ilbuni들을 움직이게 하기위해, css 애니메이션을 활용한다. */
+@keyframes moving {
+    /*from대신 0% , to대신 100%라고 써도 무방.*/
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(90vw);
+    }
+}
+.ilbuni {
+    /* ilbuni들이 절대위치를 잡을떄, 기준을 stage에 안에서 움직이게하려고
+  relative, absolute로 각각 주었다.  */
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    animation: moving infinite alternate;
+}
+.ilbuni.a {
+    left: 5%;
+    bottom: 5%;
+    background-image: url("../images/ilbuni_0.png");
+    animation-duration: 2s;
+}
+.ilbuni.b {
+    left: 10%;
+    bottom: 3%;
+    background-image: url("../images/ilbuni_1.png");
+    animation-duration: 3s;
+}
+.ilbuni.c {
+    left: 7%;
+    bottom: 10%;
+    background-image: url("../images/ilbuni_2.png");
+    animation-duration: 4s;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Interactive Web</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <style>
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            .characters {
+                /* ilbuni 가운데정렬  */
+                display: flex;
+                align-items: center;
+
+                /* 골고루 배치되게, 띄워놓기 */
+                justify-content: space-around;
+                background: #fff000;
+            }
+            .ilbuni {
+                width: 100px;
+
+                /* 클릭하는 티가 나게끔 _손가락모양 */
+                cursor: pointer;
+            }
+            .characters .ilbuni {
+                display: inline-block;
+            }
+            .special {
+                border: 10px dashed red;
+            }
+        </style>
+        <script>
+            // 그 안에있는 이미지가 로드가 덜 됐더라도, ilbuni c만 접근해서
+            // 가져오면되는데, 그래서 아래는 비효율적이므로,
+            // window.addEventListener("load", function () { //load는 문서에 있는 리소스가 전부다 끝날때까지 기다린다.
+
+            // load보다 실행시점이 빠르다 그 이유는, DOM골격만 만들어지면 바로 실행되기때문.
+            // window.addEventListener("DOMContentLoaded", function () {
+            //     const ilbuni = document.querySelector(".ilbuni.c");
+            //     // console.log(ilbuni);
+            //     function clickInbuniHandler() {
+            //         ilbuni.classList.toggle("special");
+            //     }
+
+            //     ilbuni.addEventListener("click", clickInbuniHandler);
+            // });
+
+            //  또한 JQuery에 대해 언급해줬는데, 아래의 구문이
+            //  window.addEventListener("DOMContentLoaded", function () { }와 같다.
+            // $(function(){
+            //     //...
+            // });
+        </script>
+    </head>
+    <body>
+        <div class="characters">
+            <div class="ilbuni a">
+                <img src="images/ilbuni_0.png" alt="일분이" />
+            </div>
+            <div class="ilbuni b">
+                <img src="images/ilbuni_1.png" alt="일분이" />
+            </div>
+            <div class="ilbuni c">
+                <img src="images/ilbuni_2.png" alt="일분이" />
+            </div>
+            <div class="ilbuni d">
+                <img src="images/ilbuni_3.png" alt="일분이" />
+            </div>
+        </div>
+        <script>
+            (function () {
+                const characters = document.querySelector(".characters");
+
+                const clickHandler = function (e) {
+                    // console.log(this); //characters를 가르킨다.
+                    //console.log(e.currentTarget);  //characters를 가르킨다.
+                    console.log(e.target);
+                };
+
+                //addEventListener로 등록되어있는 characters(객체) 가 클릭되었다고 생각하자!
+                characters.addEventListener("click", clickHandler);
+            })();
+
+            // (function () {
+            //     const ilbuni = document.querySelector(".ilbuni.c");
+
+            //     const clickInbuniHandler = function () {
+            //         ilbuni.classList.toggle("special");
+            //     };
+
+            //     ilbuni.addEventListener("click", clickInbuniHandler);
+            // })();
+        </script>
+    </body>
+</html>

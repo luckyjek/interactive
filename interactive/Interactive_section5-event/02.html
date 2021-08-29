@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Interactive Web</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/02_02.css" />
+    </head>
+    <body>
+        <div class="stage">
+            <div class="ilbuni a"></div>
+            <div class="ilbuni b"></div>
+            <div class="ilbuni c"></div>
+        </div>
+
+        <script>
+            (function () {
+                const ilbuniGroup = document.querySelectorAll(".ilbuni");
+                const stage = document.querySelector(".stage");
+                function clickHandler() {
+                    // this 가 곧 , ilbuniGroup[i]
+                    // console.log(this);
+                    // console.log(e.currentTarget);
+
+                    //stage를 가져와서, 아래 자식을 없앴다.
+                    // stage.removeChild(this);
+
+                    //아래와같은 방법으로, 부모에 접근 가능하다.
+                    // this.parentNode
+                    //따라서, removeChild(this)하면 바로 삭제가능.
+                    this.parentNode.removeChild(this);
+                }
+
+                //for문안에서 const가 아닌 let을 쓴 이유는 ,
+                //for문안에서 i가 0,1,2 로 바뀌기 때문이다.
+                for (let i = 0; i < ilbuniGroup.length; i++) {
+                    ilbuniGroup[i].addEventListener("click", clickHandler);
+                }
+            })();
+        </script>
+    </body>
+</html>
