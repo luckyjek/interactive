@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Interactive Web</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <style>
+            img {
+                max-width: 100%;
+            }
+            .content {
+                /* viewport height _ 브라우저는 기본 : 100vh 따라서 1000은 열배이다. */
+                height: 1000vh;
+                padding: 20%;
+                background: yellowgreen;
+            }
+            .output {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                font-size: 2rem;
+                font-weight: 200;
+                color: #fff;
+                background: rgba(0, 0, 0, 0.4);
+            }
+            .ilbuni {
+                width: 100px;
+                margin: 20px auto;
+                transition: 1s;
+            }
+            .ilbuni.zoom {
+                transform: scale(2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="output">output</div>
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                culpa id ratione alias illum aliquam accusamus deleniti dolores
+                dignissimos, temporibus iste perspiciatis voluptatem repudiandae
+                debitis similique fugiat dolor, doloremque quos mollitia
+                repellendus iure exercitationem molestiae ab! Veritatis harum
+                voluptate enim ducimus amet vitae veniam dignissimos possimus
+                facilis eaque minus similique, vel commodi sed? Sequi distinctio
+                debitis numquam, necessitatibus officiis quam, sed rerum id
+                culpa totam provident repellendus iste, laborum maiores,
+                consequuntur fugiat voluptatibus? Ad, architecto. Ipsam minus
+                quis, ea quas, ex impedit quia distinctio commodi expedita
+                laudantium dolores cum? Quisquam, odit, laboriosam consequuntur
+                expedita optio laudantium. Optio laboriosam, repellendus
+                laborum.
+            </p>
+            <figure class="ilbuni">
+                <img src="images/ilbuni_0.png" alt="일분이" />
+            </figure>
+        </div>
+
+        <script>
+            // 전역변수 사용을 피하기위해서 자동으로 실행되는 익명함수를 사용하기위해 () 묶는다.
+            (function () {
+                const outputElem = document.querySelector(".output");
+                const ilbuniElem = document.querySelector(".ilbuni");
+                let num = 0;
+
+                function showValue() {
+                    // outputElem.innerHTML = window.pageYOffset;
+                    // outputElem.innerHTML = ilbuniElem.offsetTop;
+
+                    // 1분이의 위치를 가져오기.
+                    let posY = ilbuniElem.getBoundingClientRect().top;
+                    outputElem.innerHTML = posY;
+
+                    //console.log(window.innerHeight); --높이 가져오기. 798 / 5 혹은 0.2배
+
+                    //posY가 window.innerHeight * 0.2배 보다 작을때, ilbuni한테 zoom클래스를 붙인다.
+                    if (posY < window.innerHeight / 5) {
+                        ilbuniElem.classList.add("zoom");
+                    } else {
+                        ilbuniElem.classList.remove("zoom");
+                    }
+                }
+
+                // EventListener은 최대한 간단하게 만들어줘라 즉, 함수를 분리해서 가져다 쓰는 조립씩으로 만들어주기.
+                window.addEventListener("scroll", function () {
+                    showValue();
+                });
+
+                showValue();
+            })();
+        </script>
+    </body>
+</html>
