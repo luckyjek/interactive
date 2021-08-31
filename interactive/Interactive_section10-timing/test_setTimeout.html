@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let timeId;
+
+            function sample() {
+                console.log("sample!");
+            }
+
+            //setTimeout이 리턴되는게 있다면 timeId에 저장한다.
+            timeId = setTimeout(sample, 3000);
+
+            //console.log(timeId);
+            //3초가 지나기도전에 clear했다. 그래서 실행이 취소됐다.
+            clearTimeout(timeId);
+        </script>
+    </body>
+</html>
