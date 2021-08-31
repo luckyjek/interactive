@@ -7,3 +7,93 @@ body {
     background: #fff000;
     transition: background 0.5s;
 }
+
+.world {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /*  3d효과가 자식들까지 잘 전달되기 위해 preserve-3d를 해준다. */
+    transform-style: preserve-3d;
+}
+
+.house {
+    width: 100vw;
+    height: 100vh;
+    /*  줌 아웃 */
+    transform: translateZ(-490vw);
+    transform-style: preserve-3d;
+}
+
+.wall {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(225, 255, 255, 0.8);
+}
+
+.wall-left {
+    /* left: -500vw; */
+    width: 1000vw;
+    background: #f8f8f8;
+    transform: rotateY(90deg) translateZ(-500vw);
+}
+
+.wall-right {
+    /* left: -500vw; */
+    width: 1000vw;
+    background: #f8f8f8;
+    transform: rotateY(90deg) translateZ(-400vw);
+}
+
+.wall-front-a {
+    transform: translateZ(300vw);
+}
+.wall-front-b {
+    transform: translateZ(50vw);
+}
+.wall-front-c {
+    transform: translateZ(-200vw);
+}
+.wall-front-d {
+    transform: translateZ(-500vw);
+}
+.wall-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wall-title {
+    font-size: 5rem;
+}
+
+.progress-bar-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 5px;
+    background: #555;
+}
+.progress-bar {
+    /* 프로그래스바 파랑이 */
+    width: 0%;
+    height: 100%;
+    background: #00a8ff;
+}
