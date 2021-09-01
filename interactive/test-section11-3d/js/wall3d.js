@@ -1,10 +1,16 @@
 (function () {
+    const stageElem = document.querySelector(".stage");
     const houseElem = document.querySelector(".house");
     const barElem = document.querySelector(".progress-bar");
+    //mausePos이라는 객체를 만들자
+    //마우스 움직이는 포인터로 값을 세팅해준다.
+    //가운데가 원점이 되도록, 바꾼 값을 x, y 값으로 넣어주고, 이 mousePos객체를 각도를 계산하는데 사용할 것이다.
+    const mousePos = { x: 0, y: 0 };
+
     let maxScrollValue;
 
     function resizeHandler() {
-        maxScrollValue = document.body.offsetHeight - window.innerHeight;
+        maxScrollValue = window.document.body.offsetHeight - window.innerHeight;
     }
 
     window.addEventListener("scroll", function () {
@@ -17,6 +23,19 @@
         //progress bar
         //전체스크롤 할 수있는 값 분의 현재스크롤 얼마큼 했는지 계산을해서 이용을한다.
         barElem.style.width = scrollPer * 100 + "%";
+    });
+
+    window.addEventListener("mousemove", function (e) {
+        console.log(e.clientX, e.clientY);
+        mousePos.x = -1 + (e.clientX / window.innerWidth) * 2;
+        mousePos.y = 1 + (e.clientY / window.innerWidth) * 2;
+        // console.log(mousePos);
+        stageElem.style.transform =
+            "rotateX(" +
+            mousePos.y * 5 +
+            "deg) rotateY(" +
+            mousePos.x * 5 +
+            "deg)";
     });
 
     // 창에 대응하기위함

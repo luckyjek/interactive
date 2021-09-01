@@ -1,0 +1,30 @@
+/*menu*/
+.menu {
+    display: flex;
+}
+.menu-item {
+    flex-grow: 1;
+    /* width: 25%; */
+    background: gold;
+    transition: 0.5s;
+}
+.menu-item:hover {
+    flex-grow: 1.5;
+    /* width: 35%; */
+    background: crimson;
+}
+.menu-link {
+    display: block;
+    /*em과 rem을 섞어쓴이유는 ? 
+    일단 font사이즈는 html태그 즉, 루트 요소것을 쓰겠다.
+    그 html의 설정된 font사이즈를 1.2배로 한 것이고,
+
+    padding : 1em으로 한 이유는 지금 현재 나의  font 사이즈만큼 
+    패딩을 준다는 의미이다. */
+    padding: 1em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    text-align: center;
+}
