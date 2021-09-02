@@ -28,3 +28,66 @@
     text-decoration: none;
     text-align: center;
 }
+
+/* search */
+.search-form {
+    display: flex;
+    height: 40px;
+}
+
+.search-form input[type="search"] {
+    flex: 1;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+}
+
+.search-form input[type="submit"] {
+    width: 4em;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+    background: gold;
+}
+/*info-list-item:before*/
+.info-list-item {
+    display: flex;
+    margin: 0.5em 0;
+}
+.info-list-item:before {
+    content: "🍉";
+    margin-right: 0.5em;
+}
+
+/*message*/
+.user-item {
+    display: flex;
+
+    margin-bottom: 1.5em;
+}
+.user-photo {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5em;
+    border: 2px solid #333;
+    border-radius: 50%;
+    /*구체적으로작성*/
+    background-color: gold;
+    background-repeat: no-repeat;
+    /*일반적으로ㅓ center로많이 작성*/
+    background-position: center;
+    background-size: 150%;
+}
+
+/*friend list*/
+.friend-item {
+    align-items: center;
+}
+/*그냥 말줄임 하려면 이 아래 세개를 외워두자*/
+.user-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
