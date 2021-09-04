@@ -1,0 +1,125 @@
+.header {
+    display: flex;
+    /*flex로 정렬된 상태에서 main축이 x축으로 있는데,
+    main축의 수직방향으로 정렬해야되므로, align-items를 center로해준다.*/
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    /*위,아래 0 으로하고 좌,우로는 1*/
+    padding: 0 1rem;
+}
+.search-form {
+    /*다른요소들이 더 있어서 그룹지어서 움직이고, 
+  하나만 떨어지고하면, margin-auto쓰는게 좋을것이다.
+  근데, 균일하게 가져간다면? justify-content 사용한다.*/
+    /* margin-left: auto; */
+    width: 300px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: 3rem;
+}
+
+.primary {
+    /*header의 그리드에 맞춰서 똑같이해준다. -- 상하좌우 모두*/
+    padding: 1rem;
+}
+.secondary {
+    padding: 1rem;
+}
+.secondary-a {
+    background: white;
+}
+
+.secondary-b {
+    color: white;
+    background: #666;
+}
+.footer {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid lightgray;
+}
+
+.modal {
+    display: none;
+    top: 80px;
+}
+#modal-switch {
+    font-size: 2rem;
+}
+
+/* + 는 바로다음형제를 얘기함 
+~는 자기보다 아래로오늘 형제들을 모두 다 선택한다*/
+#modal-switch:checked ~ .modal {
+    display: flex;
+}
+
+label[for="modal-switch"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    /* background: red; */
+}
+label[for="modal-switch"]:before {
+    content: "⚑";
+    font-size: 2rem;
+}
+#modal-switch:checked ~ label[for="modal-switch"]:before {
+    color: dodgerblue;
+}
+#modal-switch,
+label[for="modal-switch"] span {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    top: 0;
+}
+
+/*작은것에서부터 큰걸로 확장할때 사용*/
+@media (min-width: 1024px) {
+    /*전체를 감싸고있는 page 전체*/
+    .page {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header {
+        width: 100%;
+    }
+    .menu {
+        width: 100%;
+    }
+    .secondary {
+        width: 20%;
+    }
+    .secondary-a {
+        order: 1;
+    }
+    .secondary-b {
+        order: 3;
+    }
+    .primary {
+        order: 2;
+        width: 60%;
+    }
+    .footer {
+        order: 4;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .primary {
+        width: calc(100% - 600px);
+    }
+    .secondary {
+        width: 300px;
+    }
+}
