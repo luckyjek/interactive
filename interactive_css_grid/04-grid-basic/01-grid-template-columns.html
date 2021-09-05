@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>CSS Grid</title>
+        <link rel="stylesheet" href="default.css" />
+        <style>
+            .grid-container {
+                display: grid;
+                /* grid-template-columns: 100px 300px 200px; */
+                /* fr: fraction 비, 비율, 분수, 부분*/
+                /*1:2:1*/
+                /* grid-template-columns: 1fr 2fr 1fr; */
+                /* grid-template-columns: 1fr 500px 1fr; */
+                /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+                grid-template-columns: repeat(
+                    3,
+                    1fr
+                ); /*똑같이 세개의 컬럼으로 분할 하려고 repeat(3,1fr)해줬다.*/
+                /* grid-template-columns: repeat(3, 1fr 2fr 1fr); */
+                /* grid-template-rows: 200px 200px auto; */
+                /* grid-template-rows: repeat(2, 1fr); */
+                height: 80vh; /*컨테이너 높이를 확보해주었다.*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-item">A</div>
+            <div class="grid-item">B</div>
+            <div class="grid-item">C</div>
+            <div class="grid-item">D</div>
+            <div class="grid-item">E</div>
+            <div class="grid-item">F</div>
+            <div class="grid-item">G</div>
+            <div class="grid-item">H</div>
+            <div class="grid-item">I</div>
+        </div>
+    </body>
+</html>

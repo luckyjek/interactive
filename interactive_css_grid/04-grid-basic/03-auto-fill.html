@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>CSS Grid</title>
+        <link rel="stylesheet" href="default.css" />
+        <style>
+            /* auto-fill, auto-fit */
+            /*minmax에는 인자가 2개들어간다-> (최소값, 최대값) / 또한 auto-fill을 사용하면, media 쿼리대신해서 사용가능하다.*/
+            .grid-container {
+                display: grid;
+                /*repeat안에서 auto-fill과 auto-fit을 사용했을때, 최소값을 px로 설정하면, media쿼리를 사용하지
+								않고도, 컬럼갯수를 조정 할 수  있었다.*/
+                grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-item">A</div>
+            <div class="grid-item">B</div>
+            <div class="grid-item">C</div>
+            <div class="grid-item">D</div>
+            <div class="grid-item">E</div>
+            <div class="grid-item">F</div>
+            <div class="grid-item">G</div>
+            <div class="grid-item">H</div>
+            <div class="grid-item">I</div>
+        </div>
+    </body>
+</html>
