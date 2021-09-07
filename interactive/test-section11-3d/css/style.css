@@ -47,9 +47,37 @@ body {
 
 .wall-left {
     /* left: -500vw; */
+    display: flex;
     width: 1000vw;
     background: #f8f8f8;
     transform: rotateY(90deg) translateZ(-500vw);
+}
+
+/*액자 테스트*/
+/* .test {
+    display: flex;
+} */
+.test1 {
+    background-image: url("../image/sky_test.jpg");
+    background-size: cover;
+    border: 6px solid brown;
+    /* margin-left: 1000px;
+    margin-top: 300px; */
+    margin-left: 300px;
+    margin-top: 300px;
+    width: 300px;
+    height: 200px;
+}
+.test2 {
+    background-image: url("../image/space_rpg.jpg");
+    background-size: cover;
+    border: 6px solid brown;
+    /* margin-left: 1000px;
+    margin-top: 300px; */
+    margin-left: 600px;
+    margin-top: 300px;
+    width: 300px;
+    height: 200px;
 }
 
 .wall-right {

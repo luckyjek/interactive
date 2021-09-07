@@ -42,3 +42,7 @@
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
 })();
+
+function viewF() {
+    document.querySelector(test1);
+}
