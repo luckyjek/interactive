@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+  <title>Java Script</title>
+<style>
+body{
+  background:thistle;
+}
+  h3,p{
+    color: white;
+  }
+  a{
+    text-decoration-line: none;
+  }
+  .url{
+background-color:white;
+color:black;
+  }
+.overlay .button {
+    font: inherit;
+    padding: 8px 16px;
+    display: inline-block;
+    border: 1px solid #555;
+    color: #444;
+    background: linear-gradient(#f3f3f3, #fafafa);
+    font-weight: bold;
+}
+.overlay.open-link {
+    max-width: 100%;
+    width: auto;
+    box-sizing: border-box;
+    background: rgba(1, 1, 1, 0.85);
+}
+.overlay {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    width: 510px;
+    max-height: 90%;
+    border-radius: 8px;
+    z-index: 12000;
+    background: rgb(68, 171, 255);
+}
+.overlay .close {
+
+    display: inline-block;
+
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    position: absolute;
+    top: 8px;
+    right: 4px;
+}
+</style>
+
+</head>
+
+<body>
+          <!--modal start-->
+          <div class="open-link pointer-lock-close overlay">
+            <div id="foo">
+                <button class="close">×</button>
+                <h3>Open External Link</h3>
+                <p >
+                    »&nbsp;<span class="url"
+                        title="https://opensea.io/assets/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/146000007"
+                        >https://opensea.io/assets/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/146000007</span
+                    >
+                </p>
+                <p>
+                    <a
+                        class="button "
+                        target="_blank"
+                        href="https://opensea.io/assets/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/146000007"
+                        >Open</a
+                    >
+                </p>
+            </div>
+        </div>
+        <!--modal end-->
+  <script>
+
+
+  </script>
+</body>
+
+</html> 
