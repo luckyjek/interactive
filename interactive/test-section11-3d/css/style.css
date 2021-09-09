@@ -125,3 +125,42 @@ body {
     height: 100%;
     background: #00a8ff;
 }
+
+/*modal*/
+.open-link {
+    display: none;
+}
+h3,
+p {
+    color: white;
+}
+a {
+    text-decoration-line: none;
+}
+.url {
+    background-color: white;
+    color: black;
+}
+.overlay .button {
+    padding: 8px 16px;
+    display: inline-block;
+    border: 1px solid #555;
+    background: linear-gradient(#f3f3f3, #fafafa);
+    font-weight: bold;
+}
+.overlay.open-link {
+    background: rgba(1, 1, 1, 0.85);
+}
+.overlay {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+}
+.overlay .close {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    right: 4px;
+}

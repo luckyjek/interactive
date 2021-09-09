@@ -44,5 +44,7 @@
 })();
 
 function viewF() {
-    document.querySelector(test1);
+    let openLink = document.querySelector(".open-link");
+    console.log(openLink);
+    openLink.style.display = "inline-block";
 }
