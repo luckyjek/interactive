@@ -130,9 +130,11 @@ body {
 .open-link {
     display: none;
 }
+
 h3,
 p {
     color: white;
+    margin: 15px;
 }
 a {
     text-decoration-line: none;

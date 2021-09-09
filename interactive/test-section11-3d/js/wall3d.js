@@ -43,8 +43,15 @@
     resizeHandler();
 })();
 
+// modal test _ show
 function viewF() {
     let openLink = document.querySelector(".open-link");
     console.log(openLink);
     openLink.style.display = "inline-block";
+}
+
+//test_remove
+function removeF() {
+    let openLink = document.querySelector(".open-link");
+    openLink.style.display = "none";
 }
